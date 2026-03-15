@@ -1,0 +1,26 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main()
+{
+    vector<double> balances;
+    balances.push_back(50000);
+
+    int index=0;
+    int amount;
+
+    cout<<"Balance "<<balances[index]<<endl;
+    cout<<"Withdraw: ";
+    cin>>amount;
+
+    if(amount>balances[index])
+    {
+        cout<<"Not enough money\n";
+    }
+    else
+    {
+        balances[index]-=amount;
+        cout<<"New balance "<<balances[index]<<endl;
+    }
+}
