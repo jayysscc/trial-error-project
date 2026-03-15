@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int choice=0;
+    double balance=20000;
+
+    while(choice!=4)
+    {
+        cout<<"1 Balance\n";
+        cout<<"2 Withdraw\n";
+        cout<<"3 Deposit\n";
+        cout<<"4 Exit\n";
+
+        cin>>choice;
+
+        if(choice==1)
+        {
+            cout<<balance<<endl;
+        }
+
+        if(choice==2)
+        {
+            int x;
+            cin>>x;
+            balance-=x;
+        }
+
+        if(choice==3)
+        {
+            int x;
+            cin>>x;
+            balance+=x;
+        }
+    }
+}
