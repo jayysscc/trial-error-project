@@ -1,0 +1,48 @@
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+
+int main()
+{
+    vector<string> cards;
+    vector<double> balances;
+
+    cards.push_back("4532123412341234");
+    balances.push_back(50000);
+
+    cards.push_back("5123456789012345");
+    balances.push_back(20000);
+
+    string sender="4532123412341234";
+    string receiver;
+    int amount;
+
+    cout<<"Receiver card: ";
+    cin>>receiver;
+
+    cout<<"Amount: ";
+    cin>>amount;
+
+    int s=-1,r=-1;
+
+    for(int i=0;i<cards.size();i++)
+    {
+        if(cards[i]==sender) s=i;
+        if(cards[i]==receiver) r=i;
+    }
+
+    if(r==-1)
+    {
+        cout<<"Receiver missing\n";
+    }
+    else
+    {
+        balances[s]-=amount;
+        balances[r]+=amount;
+        cout<<"Transfer done\n";
+    }
+
+    cout<<"Sender "<<balances[s]<<endl;
+    cout<<"Receiver "<<balances[r]<<endl;
+}
