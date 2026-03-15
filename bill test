@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+void bills(int amount,int &a,int &b)
+{
+    if(amount>=1000)
+    {
+        a++;
+        bills(amount-1000,a,b);
+    }
+    else if(amount>=500)
+    {
+        b++;
+        bills(amount-500,a,b);
+    }
+}
+
+int main()
+{
+    int amount;
+    int a=0,b=0;
+
+    cout<<"Amount ";
+    cin>>amount;
+
+    bills(amount,a,b);
+
+    cout<<"1000 "<<a<<endl;
+    cout<<"500 "<<b<<endl;
+}
